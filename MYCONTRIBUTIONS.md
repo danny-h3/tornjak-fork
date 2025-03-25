@@ -12,10 +12,19 @@
 - Explored existing GitHub issues and pull requests to understand project workflows.
 
 
-## Current work on Git Issue 585
+## Finished Issues 
 
-Link: https://github.com/spiffe/tornjak/issues/585
+- Issue 585
+    Link: https://github.com/spiffe/tornjak/issues/585
+    Description: Created a documentation file detailing how to deploy Tornjak with helm charts
+    Status: PR Under Review
 
-- Created a documentation file for issue
-- 
+
+## Current Issue
+
+- Issue 584
+    Link: https://github.com/spiffe/tornjak/issues/584
+    Description: Frontend gets a runtime error when backend isn't running   
+    Status: Working on it
+
 
