@@ -25,9 +25,9 @@ type ClusterListProp = {
   tornjakMessageFunc: (globalErrorMessage: string) => void,
   // dispatches a payload for the server trust domain and nodeAttestorPlugin as a ServerInfoType and has a return type of void
   serverInfoUpdateFunc: (globalServerInfo: ServerInfo) => void,
-  // the selected server for manager mode 
+  // the selected server for manager mode
   globalServerSelected: string,
-  // error/ success messege returned for a specific function
+  // error/ success message returned for a specific function
   globalErrorMessage: string,
   // tornjak server info of the selected server
   globalTornjakServerInfo: TornjakServerInfo,
@@ -36,7 +36,7 @@ type ClusterListProp = {
 }
 
 type ClusterListState = {
-  message: string // error/ success messege returned for a specific function for this specific component
+  message: string // error/ success message returned for a specific function for this specific component
 }
 
 const Cluster = (props: { cluster: ClustersList }) => (

@@ -5,11 +5,11 @@ interface NotificationProps extends Omit<ToastNotificationProps, "title"> {
     title?: string
 }
 
-const defualtProps: ToastNotificationProps = {title: "Notification", kind: "error"}
+const defaultProps: ToastNotificationProps = {title: "Notification", kind: "error"}
 const defaultOptions: ToastContent = {autoClose: false, closeButton: false, role: "alert"}
 
 export const showToast = (props?: NotificationProps, options?: ToastOptions): void => {
-    const newProps = {...defualtProps, ...props}
+    const newProps = {...defaultProps, ...props}
     toast(<ToastNotification {...newProps} />, {...defaultOptions, ...options})
 }
 

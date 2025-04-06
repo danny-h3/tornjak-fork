@@ -1,7 +1,7 @@
 ## Build stage
 FROM node:18-alpine3.14 AS build
 WORKDIR /usr/src/app
-COPY frontend .
+COPY . .
 RUN npm install && \
     npm run build
 
@@ -17,7 +17,7 @@ RUN npm install -g npm@9.7.1 && \
     npm install react-inject-env
 RUN mkdir build/tmp
     
-# Set dynamic port, defualt 3000
+# Set dynamic port, default 3000
 ENV PORT_FE=3000
 EXPOSE $PORT_FE
 

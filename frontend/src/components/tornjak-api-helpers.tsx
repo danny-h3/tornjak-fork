@@ -20,6 +20,7 @@ import { showResponseToast } from './error-api';
 // import { displayResponseError } from './error-api';
 import { env } from '../env';
 import apiEndpoints from './apiConfig';
+import { config } from 'process';
 const Auth_Server_Uri = env.REACT_APP_AUTH_SERVER_URI;
 
 type TornjakApiProp = {}
@@ -29,6 +30,8 @@ if (Auth_Server_Uri) { // inject token if app is in auth mode and check token st
   axios.interceptors.request.use(
     async (config: any): Promise<any> => {
       console.log("Checking token status...")
+
+      // self note: nothing is returned user isn't logged in, should something just in case
       if (KeycloakService.isLoggedIn()) {
         const setAuthorization = () => {
           config.headers.Authorization = `Bearer ${KeycloakService.getToken()}`;
@@ -36,6 +39,9 @@ if (Auth_Server_Uri) { // inject token if app is in auth mode and check token st
         };
         return KeycloakService.updateToken(setAuthorization);
       }
+
+      // return config even if not logged in
+      return config;
     }
   )
 }
@@ -74,7 +80,9 @@ class TornjakApi extends Component<TornjakApiProp, TornjakApiState> {
       .catch((error) => {
         spireHealthCheckingFunc(true);
         spireHealthCheckFunc(false);
-        //logError(error)
+        // error check
+        console.error(error);
+
         showResponseToast(error, { caption: "Could not register SPIRE healthcheck." })
       })
   }
@@ -95,15 +103,15 @@ class TornjakApi extends Component<TornjakApiProp, TornjakApiState> {
   //  "agent1workloadselectorinfo": [
   //      {
   //        "id": "agentid",
-  //        "spiffeid": "agentspiffeeid",  
+  //        "spiffeid": "agentspiffeeid",
   //        "selectors": "agentworkloadselectors"
   //      }
   //    ],
   //    "agent2workloadselectorinfo": [
   //      {
   //        "id": "agentid",
-  //        "spiffeid": "agentspiffeeid",  
-  //        "selectors": "agentworkloadselectors"  
+  //        "spiffeid": "agentspiffeeid",
+  //        "selectors": "agentworkloadselectors"
   //      }
   //    ]
   // ]
@@ -438,15 +446,15 @@ class TornjakApi extends Component<TornjakApiProp, TornjakApiState> {
   //  "agent1workloadselectorinfo": [
   //      {
   //        "id": "agentid",
-  //        "spiffeid": "agentspiffeeid",  
+  //        "spiffeid": "agentspiffeeid",
   //        "selectors": "agentworkloadselectors"
   //      }
   //    ],
   //    "agent2workloadselectorinfo": [
   //      {
   //        "id": "agentid",
-  //        "spiffeid": "agentspiffeeid",  
-  //        "selectors": "agentworkloadselectors"  
+  //        "spiffeid": "agentspiffeeid",
+  //        "selectors": "agentworkloadselectors"
   //      }
   //    ]
   // ]
