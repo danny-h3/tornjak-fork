@@ -33,3 +33,44 @@
 - I've successfully reproduced issue when running frontend using NPM (4/ 1/ 2025)
 - Looking for possible solutions (4/ 1/ 2025)
 - Analyzing which components are calling backend APIS (4/ 4/ 2025)
+- Analyzed 3/16 components (4 / 6/ 2025)
+
+Component Analysis report:
+
+import "bootstrap/dist/css/bootstrap.min.css"; 😐
+import store from 'redux/store'; 😐
+import IsManager from './components/is_manager'; 😐
+import { BrowserRouter as Router, Route } from "react-router-dom"; 😐
+import { Provider } from 'react-redux'; 😐
+
+// -- Components -- //
+
+import NavigationBar from "./components/navbar"; ✅ 💾
+    // -- Calls TornjakAPI
+import SelectServer from "./components/select-server"; ✅ 💾
+    // -- Calls TornjakAPI
+import ClusterList from "./components/cluster-list"; ✅ 💾
+    // -- Calls TornjakAPI
+import ClusterManagement from "./components/cluster-management"; ⭕
+import FederationList from "./components/federation-list"; ⭕
+import TrustBundleCreate from "components/trustbundle-create"; ⭕
+import FederationCreate from "components/federation-create"; ⭕
+import AgentList from "./components/agent-list"; ⭕
+import CreateJoinToken from "./components/agent-create-join-token"; ⭕
+import EntryList from "./components/entry-list"; ⭕
+import EntryCreate from "./components/entry-create"; ⭕
+import ServerManagement from "./components/server-management"; ⭕
+import TornjakServerInfo from "./components/tornjak-server-info"; ⭕
+import TornjakDashBoardStyled from "./components/dashboard/tornjak-dashboard"; ⭕
+import DashboardDetailsRender from 'components/dashboard/dashboard-details-render'; ⭕
+import RenderOnAdminRole from 'components/RenderOnAdminRole' ⭕
+
+
+import './App.css';  ⭕
+import 'react-toastify/dist/ReactToastify.css'; 😐
+
+
+✅ - Checked
+⭕ - Unchecked
+😐 - Useless
+💾 - Contains API
