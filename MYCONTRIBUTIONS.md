@@ -14,18 +14,18 @@
 
 ## Finished Issues
 
-- Issue 585
-    Link: https://github.com/spiffe/tornjak/issues/585
-    Description: Created a documentation file detailing how to deploy Tornjak with helm charts
-    Status: PR Under Review
+### Issue 585
+- Link: https://github.com/spiffe/tornjak/issues/585
+- Description: Created a documentation file detailing how to deploy Tornjak with helm charts
+- Status: PR Under Review
 
 
 ## Current Issue
 
-- Issue 584
-    Link: https://github.com/spiffe/tornjak/issues/584
-    Description: Frontend gets a runtime error when backend isn't running
-    Status: Working on it
+### Issue 584
+- Link: https://github.com/spiffe/tornjak/issues/584
+- Description: Frontend gets a runtime error when backend isn't running
+- Status: Working on it
 
 ## Logs For Current Issue
 
@@ -35,8 +35,9 @@
 - Analyzing which components are calling backend APIS (4/ 4/ 2025)
 - Analyzed 3/16 components (4 / 6/ 2025)
 
-Component Analysis report:
+### Component Analysis report:
 
+```javascript
 import "bootstrap/dist/css/bootstrap.min.css"; 😐
 import store from 'redux/store'; 😐
 import IsManager from './components/is_manager'; 😐
@@ -74,3 +75,4 @@ import 'react-toastify/dist/ReactToastify.css'; 😐
 ⭕ - Unchecked
 😐 - Useless
 💾 - Contains API
+```
