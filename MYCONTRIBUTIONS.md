@@ -34,6 +34,7 @@
 - Looking for possible solutions (4/ 1/ 2025)
 - Analyzing which components are calling backend APIS (4/ 4/ 2025)
 - Analyzed 3/16 components (4 / 6/ 2025)
+- Analyzed 14/16 componenets, still can't determine what the issue is (4 / 11/ 2025)
 
 ### Component Analysis report:
 
@@ -52,22 +53,29 @@ import SelectServer from "./components/select-server"; ✅ 💾
     // -- Calls TornjakAPI
 import ClusterList from "./components/cluster-list"; ✅ 💾
     // -- Calls TornjakAPI
-import ClusterManagement from "./components/cluster-management"; ⭕
-import FederationList from "./components/federation-list"; ⭕
-import TrustBundleCreate from "components/trustbundle-create"; ⭕
-import FederationCreate from "components/federation-create"; ⭕
-import AgentList from "./components/agent-list"; ⭕
-import CreateJoinToken from "./components/agent-create-join-token"; ⭕
-import EntryList from "./components/entry-list"; ⭕
-import EntryCreate from "./components/entry-create"; ⭕
-import ServerManagement from "./components/server-management"; ⭕
-import TornjakServerInfo from "./components/tornjak-server-info"; ⭕
-import TornjakDashBoardStyled from "./components/dashboard/tornjak-dashboard"; ⭕
+import ClusterManagement from "./components/cluster-management"; ✅ 💾
+    // -- Calls TornjakAPI
+import FederationList from "./components/federation-list"; ✅ 💾
+    // -- Calls TornjakAPI
+import TrustBundleCreate from "components/trustbundle-create"; ✅ 💾
+    // -- Calls TornjakAPI
+import FederationCreate from "components/federation-create"; ✅
+import AgentList from "./components/agent-list"; ✅ 💾
+    // -- Calls TornjakAPI
+import CreateJoinToken from "./components/agent-create-join-token"; ✅
+import EntryList from "./components/entry-list"; ✅ 💾
+    // -- Calls TornjakAPI
+import EntryCreate from "./components/entry-create"; ✅ 💾
+    // -- Calls TornjakAPI
+import ServerManagement from "./components/server-management"; ✅
+import TornjakServerInfo from "./components/tornjak-server-info"; ✅ 💾
+    // -- Calls TornjakAPI
+import TornjakDashBoardStyled from "./components/dashboard/tornjak-dashboard"; ✅ 💾
+    // -- Calls TornjakAPI
 import DashboardDetailsRender from 'components/dashboard/dashboard-details-render'; ⭕
 import RenderOnAdminRole from 'components/RenderOnAdminRole' ⭕
 
-
-import './App.css';  ⭕
+import './App.css';  😐
 import 'react-toastify/dist/ReactToastify.css'; 😐
 
 
