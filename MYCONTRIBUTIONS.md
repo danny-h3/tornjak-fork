@@ -72,8 +72,9 @@ import TornjakServerInfo from "./components/tornjak-server-info"; ✅ 💾
     // -- Calls TornjakAPI
 import TornjakDashBoardStyled from "./components/dashboard/tornjak-dashboard"; ✅ 💾
     // -- Calls TornjakAPI
-import DashboardDetailsRender from 'components/dashboard/dashboard-details-render'; ⭕
-import RenderOnAdminRole from 'components/RenderOnAdminRole' ⭕
+import DashboardDetailsRender from 'components/dashboard/dashboard-details-render'; ✅ 💾
+    // -- Calls TornjakAPI
+import RenderOnAdminRole from 'components/RenderOnAdminRole' ✅
 
 import './App.css';  😐
 import 'react-toastify/dist/ReactToastify.css'; 😐
